@@ -32,7 +32,7 @@ import { FaucetStatus } from "./services/FaucetStatus";
       await ServiceManager.GetService(EthClaimManager).initialize();
       ServiceManager.GetService(FaucetHttpServer).initialize();
 
-      ServiceManager.GetService(FaucetProcess).emitLog(FaucetLogLevel.INFO, "Faucet initialization complete.");
+      ServiceManager.GetService(FaucetProcess).emitLog(FaucetLogLevel.INFO, "Faucet initialization complete. View at: http://localhost:8080");
     } catch(ex) {
       ServiceManager.GetService(FaucetProcess).emitLog(FaucetLogLevel.ERROR, "Faucet initialization failed: " + ex.toString());
       process.exit(0);

@@ -19,10 +19,10 @@ export function getDefaultConfig(): IConfigSchema {
       file: resolveRelativePath("faucet-store.db"),
     },
 
-    faucetTitle: "Test Faucet",
-    faucetImage: "/images/fauceth_420.jpg",
+    faucetTitle: "Mordor Testnet Faucet",
+    faucetImage: "/images/mordor.gif",
     faucetHomeHtml: "",
-    faucetCoinSymbol: "ETH",
+    faucetCoinSymbol: "mETC",
     faucetCoinType: FaucetCoinType.NATIVE,
     faucetCoinContract: null,
     faucetLogFile: null,
@@ -42,17 +42,17 @@ export function getDefaultConfig(): IConfigSchema {
     ethQueueNoFunds: false,
     ethTxExplorerLink: null,
 
-    maxDropAmount: 1000000000000000000, // 1 ETH
-    minDropAmount: 10000000000000000, // 0.01 ETH
+    maxDropAmount: 1000000000000000000, // 1 ETC
+    minDropAmount: 10000000000000000, // 0.01 ETC
     sessionTimeout: 86400,
     sessionCleanup: 2592000,
     sessionSaveTime: 120,
 
     modules: {},
 
-    spareFundsAmount: 10000000000000000, // 0.01 ETH
-    noFundsBalance: 100000000000000000, // 0.1 ETH
-    lowFundsBalance: 10000000000000000000, // 10 ETH
+    spareFundsAmount: 10000000000000000, // 0.01 ETC
+    noFundsBalance: 100000000000000000, // 0.1 ETC
+    lowFundsBalance: 10000000000000000000, // 10 ETC
     lowFundsWarning: true,
     noFundsError: true,
     rpcConnectionError: true,
@@ -63,7 +63,7 @@ export function getDefaultConfig(): IConfigSchema {
       json: "faucet-status.json",
     },
     resultSharing: {
-      preHtml: '<div class="sh-opt">Do you like the faucet? Give that project a <iframe src="https://ghbtns.com/github-btn.html?user=pk910&repo=PoWFaucet&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe></div>',
+      preHtml: '<div class="sh-opt">Do you like the faucet? Give that project a <iframe src="https://ghbtns.com/github-btn.html?user=mordortestnet&repo=faucet-PoWFaucet&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe></div>',
       postHtml: '',
       caption: null,
     },

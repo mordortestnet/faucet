@@ -270,7 +270,7 @@ export class EthWalletManager {
 
   public readableAmount(amount: bigint, native?: boolean): string {
     let amountStr = (Math.floor(this.decimalUnitAmount(amount, native) * 1000) / 1000).toString();
-    return amountStr + " " + (native ? "ETH" : faucetConfig.faucetCoinSymbol);
+    return amountStr + " " + (native ? "mETC" : faucetConfig.faucetCoinSymbol);
   }
 
   public async getWalletBalance(addr: string): Promise<bigint> {

@@ -9,7 +9,7 @@ Modularized faucet for EVM chains with different protection methods (Captcha, Mi
 
 # Why
 
-Faucets for ETH Testnets are spammed by bots. This faucet tries to reduce the efficiency of these automated requests by various protection methods.
+Faucets for Ethereum Virtual Machine [EVM] Testnets are spammed by bots. This faucet tries to reduce the efficiency of these automated requests by various protection methods.
 
 This faucet is mostly known for its proof-of-work based protection, which is currently the best and most reliable way to distribute funds on a network that got low on fund reserves.
 
@@ -30,6 +30,15 @@ For a more detailed description, take a look into the [Project Wiki](https://git
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><a href="https://github.com/mordortestnet">Mordor Testnet</a></td>
+      <td><a href="https://faucet.mordortest.net">https://faucet.mordortest.net</a></td>
+      <td>
+        <a href="#"><img alt="Faucet Version" src="https://img.shields.io/endpoint?url=https%3A%2F%2Ffaucets.pk910.de%2Fbadges%2Fversion.php%3Ffaucet%3Dsepolia-faucet" /></a>
+        <a href="https://stats.uptimerobot.com/lW1jltO2k0/794659718"><img alt="Uptime Robot ratio (30 days)" src="https://img.shields.io/uptimerobot/ratio/m794659718-c8c94ebdcae5283c5df1a5ad" /></a>
+        <a href="https://etc-mordor.blockscout.com/address/0x51Cb0EA27f03e56d84E9EB1879F131393a6769bA"><img alt="Faucet Balance" src="https://img.shields.io/endpoint?url=https%3A%2F%2Ffaucets.pk910.de%2Fbadges%2Fbalance.php%3Ffaucet%3Dsepolia-faucet" /></a>
+      </td>
+    </tr>
     <tr>
       <td><a href="https://github.com/eth-clients/sepolia">Sepolia Testnet</a></td>
       <td><a href="https://sepolia-faucet.pk910.de">https://sepolia-faucet.pk910.de</a></td>

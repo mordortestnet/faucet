@@ -37,7 +37,7 @@ export class FaucetInput extends React.PureComponent<IFaucetInputProps, IFaucetI
       inputTypes.push("ENS name");
     }
     else {
-      inputTypes.push("ETH address");
+      inputTypes.push("ETC address");
       if(this.props.faucetConfig.modules.ensname)
         inputTypes.push("ENS name");
     }
