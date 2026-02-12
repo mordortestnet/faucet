@@ -3,7 +3,7 @@ name: Development Build
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "mordor" ]
   workflow_dispatch:
 
 jobs:

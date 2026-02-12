@@ -7,6 +7,20 @@
 
 Modularized faucet for EVM chains with different protection methods (Captcha, Mining, IP, Mainnet Balance, Gitcoin Passport and more)
 
+## Mordor Testnet Configuration
+
+This repository is configured for **Mordor Testnet** (Ethereum Classic testnet) on the `mordor` branch:
+
+- **Chain ID**: 63
+- **Network Name**: Mordor Testnet
+- **Ticker**: mETC
+- **RPC Endpoint**: https://rpc.mordor.etccooperative.org
+- **Block Explorer**: https://explorer.mordor.etccooperative.org
+
+For information about the branch strategy and how to contribute, see [BRANCH_STRATEGY.md](BRANCH_STRATEGY.md).
+
+The `main` branch stays synchronized with the upstream [pk910/PoWFaucet](https://github.com/pk910/PoWFaucet) repository.
+
 # Why
 
 Faucets for ETH Testnets are spammed by bots. This faucet tries to reduce the efficiency of these automated requests by various protection methods.
@@ -30,6 +44,14 @@ For a more detailed description, take a look into the [Project Wiki](https://git
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><a href="https://github.com/eth-classic/mordor">Mordor Testnet</a></td>
+      <td>TBD</td>
+      <td>
+        <img alt="Chain ID: 63" src="https://img.shields.io/badge/Chain%20ID-63-blue" />
+        <img alt="Network: Mordor" src="https://img.shields.io/badge/Network-Mordor-green" />
+      </td>
+    </tr>
     <tr>
       <td><a href="https://github.com/eth-clients/sepolia">Sepolia Testnet</a></td>
       <td><a href="https://sepolia-faucet.pk910.de">https://sepolia-faucet.pk910.de</a></td>
