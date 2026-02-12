@@ -364,7 +364,7 @@ modules:
 
     skipProxyCheckScore: 0  # skip proxy check for IP when wallet score exceeds this
     skipHostingCheckScore: 0 # skip hosting check for IP when wallet score exceeds this
-    allowGuestRefresh: false # allow passport refresh without active session (ie. refresh for skippimg hosting/proxy check)
+    allowGuestRefresh: false # allow passport refresh without active session (ie. refresh for skipping hosting/proxy check)
     guestRefreshCooldown: 0 # refresh cooldown without active session (default to refreshCooldown if 0)
 
     boostFactor:
