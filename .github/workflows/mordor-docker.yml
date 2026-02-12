@@ -1,0 +1,65 @@
+name: Build Mordor Docker Image
+
+on:
+  push:
+    branches:
+      - 'mordor'
+    tags:
+      - 'mordor-v*'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_docker:
+    name: Build Mordor Docker Image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+        if: github.event_name != 'pull_request'
+      
+      - name: Get project versions
+        id: version
+        run: |
+          echo "server_version=$(cat package.json | jq ".version" | tr -d '"\r\n')" >> $GITHUB_OUTPUT
+          echo "client_version=$(cat faucet-client/package.json | jq ".version" | tr -d '"\r\n')" >> $GITHUB_OUTPUT
+          echo "git_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: mordortestnet/faucet
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}},prefix=mordor-
+            type=semver,pattern={{major}}.{{minor}},prefix=mordor-
+            type=raw,value=mordor-latest,enable=${{ github.ref == 'refs/heads/mordor' }}
+            type=raw,value=mordor-${{ steps.version.outputs.server_version }},enable=${{ github.ref == 'refs/heads/mordor' }}
+      
+      - name: Build and push multi-arch images
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          file: Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            BUILD_DATE=${{ steps.version.outputs.server_version }}
+            VCS_REF=${{ steps.version.outputs.git_sha }}
